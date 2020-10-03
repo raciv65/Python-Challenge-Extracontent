@@ -1,0 +1,6 @@
+Paragraph Analysis
+-------------------------------------------------
+Approximate Word Count: 120
+Approximate Sentence Count: 5
+Averange Letter Count: 4.6
+Averange Setence Length: 24
