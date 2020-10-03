@@ -1,5 +1,6 @@
 import os
 import re
+import csv
 
 Choose=input(f'''Wich paragraph do you want to analysis:
 (1) paragraph_1.txt
@@ -45,9 +46,15 @@ if Choose== "1" or Choose=="2" or Choose=="3":
     Average Sentence Length: {round((WordsCount/SentenceCount),2):,}
     ''')
 
-    #SaveFile=os.path,join("Analysis Paragraph"+str(Choose)+"txt")
-
-
-
+    SaveFile=os.path.join("Analysis","Paragraph"+str(Choose)+".txt")
+    with open(SaveFile, "w", newline='', encoding="UTF-8") as datafile:
+        writer=csv.writer(datafile)
+        writer.writerow(['Paragraph Analysis'])
+        writer.writerow(['-------------------------------------------------'])
+        writer.writerow(['Approximate Word Count: {:n}'.format(WordsCount)])
+        writer.writerow(['Approximate Sentence Count: {:n}'.format(SentenceCount)])
+        writer.writerow(['Averange Letter Count: {:n}'.format(round(avarange(LettersWord),1))])
+        writer.writerow(['Averange Setence Length: {:n}'.format(round(WordsCount/SentenceCount,2))])
+        
 else:
     print(f''' Please, choose or write a number''')
